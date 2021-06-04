@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:r="https://season-studio.github.io/" width="1789" height="821" r:tag="template">
+    <style>
+        <![CDATA[
+        * {
+            font-family: "等线 Light";
+        }
+        text {
+            fill: #000;
+        }
+        .time-asix {
+            font-size: 22px;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+
+        /* style of the caption */
+        .caption-text {
+            font-family: "等线";
+            font-size: 30px;
+            dominant-baseline: middle;
+            text-anchor: middle;
+            fill: #fff;
+            color: #fff;
+            padding:10px;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .caption-background {
+            fill: #ef4d06;
+        }
+        [data-project-state="warn"] .caption-background {
+            fill: #600;
+        }
+        [data-project-state="finished"] .caption-background {
+            fill: green;
+        }
+        [data-project-state="cancelled"] .caption-background {
+            fill: #ccc;
+        }
+        [data-project-state="suspend"] .caption-background {
+            fill: #999;
+        }
+        .caption-graph {
+            opacity: 0.8
+        }
+
+        /* style of the text of the item */
+        .item-text {
+            font-family: "等线 Light";
+            font-size: 22px;
+            text-anchor: end;
+            fill: #000;
+            stroke: none;
+        }
+        .item-text-up {
+            dominant-baseline: auto;
+        }
+        .item-text-down {
+            dominant-baseline: hanging;
+        }
+        
+        /* style of the track of the item */
+        .item-track {
+            fill: #ccc;
+            stroke: #fff;
+        }
+        [data-item-state="delay"] .item-track {
+            fill: red;
+        }
+        [data-item-state="normal"] .item-track {
+            fill: #23A8F2;
+        }
+        [data-item-state="finish"] .item-track {
+            fill: #0ED068;
+        }
+        ]]>
+    </style>
+    <defs>
+        <pattern id="fillColumn" width="102" height="6" patternUnits="userSpaceOnUse">
+            <path d="M102,0v3" stroke="#000" stroke-width="1" />
+        </pattern>
+        <filter id="itemTextShadow" x="0" y="0" width="100%" height="100%">
+            <feGaussianBlur result="blurOut" in="SourceAlpha" stdDeviation="3" />
+            <feColorMatrix result="matrixOut" in="blurOut" type="matrix" values="0 0 0 0 0 
+                                                                                    0 0 0 0 0 
+                                                                                    0 0 0 0 0 
+                                                                                    0 0 0 1 0" />
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal" />
+        </filter>
+        <marker id="arrow" 
+            markerUnits="strokeWidth" 
+            markerWidth="12" 
+            markerHeight="12" 
+            viewBox="0 0 12 12" 
+            refX="12" 
+            refY="6" 
+            orient="auto">
+            <path d="M2,2 L10,6 L2,10 L6,6 L2,2" style="fill: #000000;" />
+            <path d="M11 2V10" stroke="#000" fill="none" />
+        </marker>
+    </defs>
+    <g r:tag="backgaround">
+        <rect x="0" y="0" width="1428" height="726" stroke="#666" stroke-width="1" fill="url(#fillColumn)" stroke-dasharray="3" transform="translate(339, 57)" r:time-scale-size="width" r:dync-global="height=(layout.globalZoneSize+2)<726?726:(layout.globalZoneSize+2)" />
+        <rect x="0" y="0" width="1789" height="821" fill="rgba(246,246,246,0.5)" stroke="none" r:dync-global="height=(layout.globalZoneSize+82)<821?821:(layout.globalZoneSize+82)" />
+        <g transform="translate(339, 0)">
+            <text y="36" class="time-asix">
+                <tspan x="51" r:time="0" r:time-start="2020/12/01" fill="#aaa">Past</tspan>
+                <tspan x="153" r:time="1" r:time-start="2021/01/01">Jan.</tspan>
+                <tspan x="255" r:time="2" r:time-start="2021/02/01">Feb.</tspan>
+                <tspan x="357" r:time="3" r:time-start="2021/03/01">Mar.</tspan>
+                <tspan x="459" r:time="4" r:time-start="2021/04/01">Apr.</tspan>
+                <tspan x="561" r:time="5" r:time-start="2021/05/01">May</tspan>
+                <tspan x="663" r:time="6" r:time-start="2021/06/01">Jun.</tspan>
+                <tspan x="765" r:time="7" r:time-start="2021/07/01">Jul.</tspan>
+                <tspan x="867" r:time="8" r:time-start="2021/08/01">Aug.</tspan>
+                <tspan x="969" r:time="9" r:time-start="2021/09/01">Sep.</tspan>
+                <tspan x="1071" r:time="10" r:time-start="2021/10/01">Oct.</tspan>
+                <tspan x="1173" r:time="11" r:time-start="2021/11/01">Nov.</tspan>
+                <tspan x="1275" r:time="12" r:time-start="2021/12/01">Dec.</tspan>
+                <tspan x="1379" r:time="13" r:time-start="2022/01/01" r:time-end="2022/02/01" fill="#aaa">Future</tspan>
+            </text>
+        </g>
+    </g>
+    <g r:tag="roadmap-zone" transform="matrix(1,0,0,1,0,58)" r:prime-date-map="`${year-1}/12/01`"> <!-- r:max-size="741"> -->
+        <g r:tag="project-template" r:grow-direction="horizontal" r:item-margin="0">
+            <g r:tag="project-group" r:dync-project="data-project-state=project.state">
+                <rect x="17" y="0" width="1749" height="0" stroke="none" fill="rgba(128,128,128,0.1)" r:dync-project="height=layout.projectZoneSize+20;fill=(layout.projectIndex, (layout.projectIndex&1)?'rgba(128,128,128,0.1)':'none')" />
+                <g r:tag="project-zone" transform="matrix(1,0,0,1,0,10)">
+                    <g r:tag="project-caption">
+                        <rect x="28" y="0" width="71" height="69" stroke="none" class="caption-background caption-graph" />
+                        <rect x="28" y="0" width="294" height="69" stroke="none" class="caption-background caption-graph" />
+                        <image x="33" y="4" width="60" height="60" r:dync="href=project.image;$show=project.image" />
+                        <foreignObject x="100" y="0" width="223" height="69">
+                            <body xmlns="http://www.w3.org/1999/xhtml">
+                                <div class="caption-text" r:dync=":=project.caption">
+                                        Project Caption
+                                </div>
+                            </body>
+                        </foreignObject>
+                    </g>
+                    <g r:tag="project-item-zone" transform="translate(339, 0)">
+                        <g r:tag="project-item" r:dync="data-item-state=item.state">
+                            <rect x="0" y="26" width="100" height="17" class="item-track" r:dync="x=layout.itemStart;width=layout.itemSize"></rect>
+                            <line x1="0" y1="34" x2="0" y2="34" stroke="#000" stroke-width="1"stroke-dasharray="5" marker-end="url(#arrow)" r:dync="$show=$.break(Number(item.progress)&&item.state);x1=layout.itemStart;x2=layout.itemStart+layout.itemSize*Number(item.progress)/100" />
+                            <text x="100" y="22" filter="url(#itemTextShadow)" class="item-text item-text-up" r:dync="x=layout.itemEnd;:=item.text;$show=!(layout.itemLocalIndex & 1)">Item1</text>
+                            <text x="100" y="46" filter="url(#itemTextShadow)" class="item-text item-text-down" r:dync="x=layout.itemEnd;:=item.text;$show=(layout.itemLocalIndex & 1)">Item1</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

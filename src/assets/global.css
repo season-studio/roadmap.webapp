@@ -1,0 +1,89 @@
+* {
+    margin: 0px;
+    cursor: default;
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
+body {
+    padding: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	-webkit-border-radius: 7px;
+    border-radius: 7px;
+    background: rgba(57,57,57,0.1);
+}
+
+:hover::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    background: rgba(0,0,0,0.3); 
+}
+
+/* ::-webkit-scrollbar-button {
+    width: 13px;
+    height: 13px;
+    background-color: transparent;
+}
+
+:hover::-webkit-scrollbar-button {
+    background: rgba(0,0,0,0.3); 
+} */
+
+.bar-background {
+    background: linear-gradient(to top, #e9e9e9 17%, #f0f0f0 26%, #fff 100%);
+    box-shadow: 0px 0px 6px rgba(128, 128, 128, 0.6);
+}
+
+.tool-button {
+    font-size: 15px;
+    border-radius: 6px;
+    border: solid 1px #ccc;
+    background-color: #fff;
+    padding: 6px 0px;
+    margin: 0px 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+.tool-button > svg {
+    margin: 0px 3px;
+}
+.tool-button:hover {
+    border-color: #40a9ff;
+    color: #40a9ff;
+    fill: #40a9ff;
+}
+.tool-button:active {
+    border-color: #0272ce;
+    color: #0272ce;
+    fill: #0272ce;
+}
+.tool-button[d-tool-flag="danger"]:hover {
+    border-color: #f00;
+    color: #f00;
+    fill: #f00;
+}
+.tool-button[d-tool-flag="danger"]:active {
+    border-color: #e00;
+    color: #e00;
+    fill: #e00;
+}

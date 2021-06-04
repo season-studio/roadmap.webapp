@@ -1,0 +1,28 @@
+{
+  "name": "roadmap-generator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "verify manifest": "office-addin-manifest validate .\\manifests\\release\\manifest.xml",
+    "clear cache": "rd /s /q %LOCALAPPDATA%\\Microsoft\\Office\\16.0\\Wef & rd /s /q %userprofile%\\AppData\\Local\\Packages\\Microsoft.Win32WebViewHost_cw5n1h2txyewy\\AC\\#!123\\INetCache & echo %errorlevel%"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "jszip": "^3.6.0",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "office-addin-debugging": "^4.1.5",
+    "office-addin-manifest": "^1.5.21",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

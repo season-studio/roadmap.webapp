@@ -1,0 +1,12 @@
+{
+    "parts": [{
+        "id": "c43f4bb6-8373-4ffa-9587-3c5f94a843d9",
+        "type": "template",
+        "part": "template.svg"
+        }, {
+            "id": "53e52b67-1d49-4ef7-8d19-04b437659f68",
+            "type": "thumb",
+            "part": "thumb.png"
+        }
+    ]
+}
